@@ -24,4 +24,8 @@ public class Const implements Expr {
         this.value = value;
     }
 
+    public int pri() {
+        return Integer.MAX_VALUE;
+    }
+
 }

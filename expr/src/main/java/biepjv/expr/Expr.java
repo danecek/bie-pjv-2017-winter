@@ -8,5 +8,6 @@ package biepjv.expr;
 public interface Expr {
 
     int eval();
+    int pri();
 
 }
