@@ -11,36 +11,48 @@ package biepjv.arrayset;
  */
 public class ArraySet3 extends ArraySet2 {
 
+    @Override
     protected int find(Object e) {
+        if (!(e instanceof Comparable)) {
+            throw new IllegalArgumentException("not comparable");
+        }
+        Comparable ce = (Comparable) e;
         int min = 0;
-        int max = size() - 1;
+        int max = size - 1;
         while (max >= min) {
-            int h = (max - min) / 2;
-            int cr = ((Comparable) elems[h]).compareTo(e);
+            int h = (max + min) / 2;
+            int cr = ce.compareTo(elems[h]);
             if (cr == 0) {
-                return h;
+                return h; // in <0..size-1>
             }
             if (cr < 0) {
                 max = h - 1;
-            }
-            if (cr > 0) {
+            } else {
                 min = h + 1;
             }
         }
-        return -1;
+        return min;// position of first element greater then ce (<0..size>)
     }
 
     @Override
     public boolean add(Object e) {
-        int i;
-        for (i = 0; i < size() && ((Comparable) e).compareTo(elems[i]) >= 0; i++);
-        if (e.equals(elems[i])) {
+        int i = find(e);
+        if (i < size && e.equals(elems[i])) {
             return false;
         }
-        System.arraycopy(elems, i, elems, i + 1, size() - i);
-        elems[i] = e;
+        Object[] newItems = elems;
+        if (elems.length == size) {
+            newItems = new Object[elems.length * 2];
+            System.arraycopy(elems, 0, newItems, 0, i);
+        }
+        System.arraycopy(elems, i, newItems, i + 1, size - i);
+        newItems[i] = e;
+        elems = newItems;
         size++;
         return true;
+    }
+
+    public ArraySet3() {
     }
 
     public ArraySet3(int initialCapacity) {
