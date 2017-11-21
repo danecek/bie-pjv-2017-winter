@@ -82,8 +82,7 @@ public class ArraySet implements Set<Object> {
     }
 
     @Override
-    public boolean add(Object e
-    ) {
+    public boolean add(Object e) {
         if (contains(e)) {
             return false;
         }

@@ -5,8 +5,10 @@
  */
 package biepjv.arrayset;
 
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -20,8 +22,10 @@ public class Test {
         for (int i = 0; i < n; i++) {
             s.add(r.nextInt());
         }
-        for (int i = 0; i < 10 * n; i++) {
-            s.add(r.nextInt());
+        for (int i = 0; i < 10 * n; i  
+                ++  
+                ) {
+            s.contains(r.nextInt());
         }
         return System.currentTimeMillis() - b;
 
@@ -31,6 +35,8 @@ public class Test {
         int n = 10000;
         System.out.println(testAS(new ArraySetDynamic(), n));
         System.out.println(testAS(new ArraySetOrdered(), n));
+        System.out.println(testAS(new HashSet(), n));
+        System.out.println(testAS(new TreeSet(), n));
 //        Set as = new ArraySet3(1);
 //        System.out.println(as);
 //        as.add("xxx");

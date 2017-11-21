@@ -21,8 +21,7 @@ public class ArraySetDynamic extends ArraySet {
     @Override
     public boolean full() {
         return false;
-    }   
-    
+    }
 
     @Override
     public boolean add(Object e) {
@@ -30,7 +29,7 @@ public class ArraySetDynamic extends ArraySet {
             Object[] newElems = new Object[elems.length * 2];
             System.arraycopy(elems, 0, newElems, 0, size());
             elems = newElems;
-           // System.out.println("new length: " + elems.length);
+            // System.out.println("new length: " + elems.length);
         }
         return super.add(e);
     }
