@@ -19,8 +19,8 @@ public class ArraySet3 extends ArraySet2 {
         Comparable ce = (Comparable) e;
         int min = 0;
         int max = size - 1;
-        while (max >= min) {
-            int h = (max + min) / 2;
+        while (min <= max) {
+            int h = (min + max) / 2;
             int cr = ce.compareTo(elems[h]);
             if (cr == 0) {
                 return h; // in <0..size-1>
@@ -31,7 +31,7 @@ public class ArraySet3 extends ArraySet2 {
                 min = h + 1;
             }
         }
-        return min;// position of first element greater then ce (<0..size>)
+        return min;// position of the first element greater then ce (<0..size>)
     }
 
     @Override
