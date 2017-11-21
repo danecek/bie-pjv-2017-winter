@@ -9,7 +9,7 @@ package biepjv.arrayset;
  *
  * @author danecek
  */
-public class ArraySet3 extends ArraySet2 {
+public class ArraySetOrdered extends ArraySetDynamic {
 
     @Override
     protected int find(Object e) {
@@ -52,10 +52,10 @@ public class ArraySet3 extends ArraySet2 {
         return true;
     }
 
-    public ArraySet3() {
+    public ArraySetOrdered() {
     }
 
-    public ArraySet3(int initialCapacity) {
+    public ArraySetOrdered(int initialCapacity) {
         super(initialCapacity);
     }
 

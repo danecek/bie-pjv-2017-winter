@@ -9,12 +9,12 @@ package biepjv.arrayset;
  *
  * @author danecek
  */
-public class ArraySet2 extends ArraySet {
+public class ArraySetDynamic extends ArraySet {
 
-    public ArraySet2() {
+    public ArraySetDynamic() {
     }
 
-    public ArraySet2(int initialCapacity) {
+    public ArraySetDynamic(int initialCapacity) {
         super(initialCapacity);
     }
 

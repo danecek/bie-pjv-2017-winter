@@ -29,8 +29,8 @@ public class Test {
 
     public static void main(String[] args) {
         int n = 10000;
-        System.out.println(testAS(new ArraySet2(), n));
-        System.out.println(testAS(new ArraySet3(), n));
+        System.out.println(testAS(new ArraySetDynamic(), n));
+        System.out.println(testAS(new ArraySetOrdered(), n));
 //        Set as = new ArraySet3(1);
 //        System.out.println(as);
 //        as.add("xxx");
