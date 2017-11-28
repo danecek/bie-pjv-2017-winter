@@ -26,10 +26,11 @@ public class MainWindow extends BorderPane {
         open.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                new MyDialog(c.execute();
+                new MyDialog(MainWindow.this).execute();
             }
         });
         buttonBar.getChildren().add(open);
+
     }
 
     void setNewName(String newName){
