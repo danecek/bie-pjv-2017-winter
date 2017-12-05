@@ -20,6 +20,6 @@ public class NameToken extends Token {
     
     @Override
     public String toString() {
-        return "NameToken{" + "value=" + value + '}';
+        return value;
     }
 }

@@ -54,7 +54,28 @@ public class MyScanner {
         } else if (actCh == 0) {
             return new Token(TokenCls.EOF);
         } else {
-            throw new IOException("unknown character: " + actCh);
+            switch (actCh) {
+                case '+': {
+                    next();
+                    if (actCh == '+') {
+                        next();
+                        return new Token(TokenCls.PLUSPLUS);
+                    }
+                    return new Token(TokenCls.PLUS);
+                }
+                case '\'': {
+                    next();
+                    CharToken ct = new CharToken(actCh);
+                    next();
+                    if (actCh != '\'') {
+                        throw new IOException("invalid character literal");
+                    }
+                    next();
+                    return ct;
+                }
+                default:
+                    throw new IOException("unknown character: " + actCh);
+            }
         }
     }
 

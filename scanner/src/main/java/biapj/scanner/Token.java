@@ -12,4 +12,10 @@ public class Token {
     public Token(TokenCls tokenCls) {
         this.tokenCls = tokenCls;
     }
+
+    @Override
+    public String toString() {
+        return tokenCls.toString();
+    }
+    
 }

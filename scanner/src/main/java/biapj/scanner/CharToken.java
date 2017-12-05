@@ -21,7 +21,7 @@ public class CharToken extends Token{
 
     @Override
     public String toString() {
-        return "CharToken{" + "value=" + value + '}';
+        return "\'" + value + '\'';
     }
     
 }

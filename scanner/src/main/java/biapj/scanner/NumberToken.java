@@ -13,7 +13,7 @@ public class NumberToken extends Token {
 
     @Override
     public String toString() {
-        return "NumberToken{" + "value=" + value + '}';
+        return Integer.toString(value);
     }
 
     public NumberToken(int value) {

@@ -6,5 +6,16 @@
 package biapj.scanner;
 
 public enum TokenCls {
-    NUM, NAME, EOF, CHAR
+    NUM("NUM"), NAME("NAME"), EOF("EOF"), CHAR("CHAR"), PLUS("+"), PLUSPLUS("++");
+
+    TokenCls(String text) {
+        this.text = text;
+    }
+    String text;
+
+    @Override
+    public String toString() {
+        return text;
+    }
+    
 }
